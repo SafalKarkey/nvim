@@ -17,10 +17,26 @@ return {
     },
 	
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = { 
+      documentation = { auto_show = false },
+      menu = { border = 'rounded' }
+    },
     sources = {
 	    default = {'lsp', 'path', 'snippets', 'buffer'},
+    },
 
+    -- Enable cmdline completion
+    cmdline = {
+      enabled = true,
+      keymap = { preset = 'cmdline' },
+      sources = { 'buffer', 'cmdline' },
+      completion = {
+        menu = { 
+          auto_show = function(ctx)
+            return vim.fn.getcmdtype() == ':'
+          end
+        }
+      }
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

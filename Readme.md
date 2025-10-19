@@ -2,9 +2,11 @@
 
 - Requirement: Neovim 0.10+
     - In debian distro like ubuntu, install using:
-    - `sudo add-apt-repository ppa:neovim-ppa/unstable`
-    - `sudo apt update`
-    - `sudo apt install neovim`
+    ```
+    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo apt update
+    sudo apt install neovim
+    ```
 - Clone in the folder `~/.config`
 - Uses Lazy plugin manager
 
@@ -14,7 +16,7 @@
 ### Blink completion
 
 - Install rust for fuzzy matching
-```
+```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
